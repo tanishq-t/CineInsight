@@ -1,1 +1,2 @@
 # CineInsight
+Author - Tanishq Tyagi
