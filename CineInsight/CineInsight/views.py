@@ -449,7 +449,7 @@ def register(request):
         last = request.POST.get("lastname")
         pass1 = request.POST.get("pass")
         pass2 = request.POST.get("confirm")
-        if uname or email or first or last or pass1 or pass2 == "":
+        if uname=="" or email=="" or first=="" or last=="" or pass1=="" or pass2 == "":
             mess = "Please enter all the necessary fields!!"
             return render(request,"signUp.html",{"mess":mess})
 
@@ -464,7 +464,7 @@ def register(request):
         try:
             my_user = User.objects.create_user(first_name=first,last_name=last,username=uname, email=email,password= pass1)
             my_user.save()
-            return HttpResponse("User Created Successfully")
+            return redirect("login")
         except:
             return HttpResponse("Error creating user. Please try again.")
     return render(request,'signUp.html')
