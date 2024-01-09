@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineInsight</title>
+    <link rel="stylesheet" href="/static/basics.css">
+    {% block linktag %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/static/download.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="site-name">CineInsight</div>
+        <div class="link-container">
+            <a href="/" class= "{% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="http://127.0.0.1:8000/movies/" class= "{% if request.path == '/movies/' %}active{% endif %}">Movies</a>
+            <a href="http://127.0.0.1:8000/tv/" class= "{% if request.path == '/tv/' %}active{% endif %}">TV Shows</a>
+            <a href="http://127.0.0.1:8000/dashboard/" class= "{% if request.path == '/dashboard/' %}active{% endif %}">Dashboard</a>
+         </div>
+        {% if user.is_authenticated %}
+            <h2>Welcome {{user.username}}!!</h2>
+            <a href="http://127.0.0.1:8000/logout/"><button class="login">LOG OUT</button></a>
+        {% else %}
+            <a href="http://127.0.0.1:8000/login/"><button class="login">LOGIN</button></a>
+        {% endif %}
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section contact-section">
+                <h3>Contact Us</h3>
+                <p>Email: contact@CineInsight.com</p>
+            </div>
+            
+            <div class="footer-section about-us-section">
+                <h3>About Us</h3>
+                <p>Our Movie Review Site is dedicated to providing honest and insightful reviews of the latest movies. Our team of passionate movie enthusiasts strives to bring you the best recommendations and insights into the world of cinema.</p>
+            </div>
+            
+            <div class="footer-section quick-links-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="http://127.0.0.1:8000/movies/">Movies</a></li>
+                    <li><a href="http://127.0.0.1:8000/tv/">TV Shows</a></li>
+                </ul>
+            </div>
+        </div>
+            
+        <div class="copyright-section">
+            <p>&copy; 2023 CineInsight. All rights reserved.</p>
+        </div>
+    </footer>
+
+    {% block script %}{% endblock %}
+</body>
+</html>

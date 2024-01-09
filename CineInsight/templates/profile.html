@@ -1,0 +1,39 @@
+{% extends 'basic.html' %}
+
+
+{% block linktag %}<link rel="stylesheet" href="/static/profiles.css">{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="profile-container" >
+    <div class="detail-container">
+        <div class="profile-pic" style="background-image: url('/static/istockphoto-1249856402-612x612.jpg'); background-size: contain;"></div>
+        <div class="user-details">
+            <h1>Personal Info</h1>
+            <p>Name: {{user.first_name}} {{user.last_name}} </p>
+            <p>Username: {{user.username}}</p>
+            <p>Email: {{user.email}}</p>
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="favourite">
+            <h1>Favourite Movies:</h1>
+            {% for i in favorites %}
+            <div class="movie-name"> {{i}}</div>
+            {% endfor %}
+        </div>
+        <div class="myreviews">
+            <h1>Favourite TV Shows:</h1>
+            {% for i in favoritetv %}
+            <div class="movie-name"> {{i}}</div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="error-mess">
+    <h1>Please Login to view Dashboard !!</h1>
+</div>
+{% endif %}
+
+{% endblock %}

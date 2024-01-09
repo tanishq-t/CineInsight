@@ -1,0 +1,88 @@
+{% extends 'basic.html' %}
+{% block linktag %}
+<style>
+    .filter-container{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        width: 100%;
+        padding: 1.5rem;
+        color: white;
+    }
+
+    .movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
+
+    .movie-card {
+        max-width: 300px;
+        margin: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .movie-card:hover{
+        opacity: 0.8;
+    }
+
+    .movie-card:active{
+        opacity: 0.5;
+    }
+
+    .movie-card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .movie-details {
+        padding: 20px;
+    }
+
+    .movie-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .release-date {
+        margin-bottom: 15px;
+    }
+
+    .loading {
+        text-align: center;
+        padding: 20px;
+        font-size: 1.2em;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="filter-container">
+    <h1>Filter:</h1>
+    <h1 class="genre-name">{{genre_name}}</h1>
+</div>
+<div id="movie-container" class="movie-container">
+    {% for movie in movies %}
+    <a href="/moviedetails/{{movie.id}}" style="text-decoration: none; color: black;">
+    <div class="movie-card">
+        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="{{ movie.original_title }} Poster">
+        <div class="movie-details">
+            <h2 class="movie-title">{{ movie.original_title }}</h2>
+            <p class="release-date">Release Date: {{ movie.release_date }}</p>
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+</div>
+<div id="loading" class="loading">Loading...</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+{% block script %}<script src="/static/moviefilters.js"></script>{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'basic.html' %}
+{% block linktag %}<link rel="stylesheet" href="/static/movie.css">{% endblock %}
+
+{% block content%}
+<form action="/searchresult/" class="search-bar" method="post">
+    {% csrf_token %}
+    <input name="search-bar" class="search" type="search" placeholder="Search here...">
+    <button><img src="/static/search-icon-white-png-18.jpg"></button>
+</div>
+</form>
+<div class="filters">
+    <h1>Filters:</h1>
+    <div class="filter-buttons">
+        {% for i in genre %}
+        <a href="http://127.0.0.1:8000/tv/{{i.1}}/"><button value="{{i.1}}">{{i.1}}</button></a>
+        {% endfor %}
+    </div>
+</div>
+
+<div id="movie-container" class="movie-container">
+    {% for movie in tv %}
+    <a href="/tvdetails/{{movie.id}}" style="text-decoration: none; color: black;">
+    <div class="movie-card">
+        <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" alt="{{ movie.name }} Poster">
+        <div class="movie-details">
+            <h2 class="movie-title">{{ movie.name }}</h2>
+            <p class="release-date">Release Date: {{ movie.first_air_date }}</p>
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+</div>
+<div id="loading" class="loading">Loading...</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% endblock %}
+{% block script %}<script src="/static/tvShows.js"></script>{% endblock %}

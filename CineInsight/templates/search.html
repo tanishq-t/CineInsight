@@ -1,0 +1,81 @@
+{% extends 'basic.html' %}
+
+{% block linktag %}
+<style>
+    .error{
+        display: flex;
+        justify-content: center;
+        padding: 3rem;
+        width: 100%;
+        height: 300px;
+        color: white;
+    }
+
+    .result-container{
+        width: 100%;
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .movie-card{
+        width: 400px;
+        height: 500px;
+        border-radius: 20px;
+        margin-top: 1rem;
+    }
+
+    .movie-card img{
+        width: 100%;
+        height: 70%;
+    }
+
+    .movie-details{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        padding: 1rem;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="result-container">
+    {% if data == 'none' %}
+    <div>
+        <h1 class="error">Sorry no data found!</h1>
+    </div>
+    {% else %}
+    <h1>Search Results:</h1>
+    <div class="result">
+        {% if 'title' in keys %}
+        <a href="/moviedetails/{{data.0.id}}" style="text-decoration: none; color: black;">
+            <div class="movie-card">
+                <img src="https://image.tmdb.org/t/p/w500/{{ data.0.poster_path }}" alt="{{ data.0.title }} Poster">
+                <div class="movie-details" >
+                    <h2 class="movie-title">{{ data.0.title }}</h2>
+                    <p class="release-date">Release Date: {{ data.0.release_date }}</p>
+                </div>
+            </div>
+        </a>
+        {% else %}
+        <a href="/tvdetails/{{data.0.id}}" style="text-decoration: none; color: black;">
+            <div class="movie-card">
+                <img src="https://image.tmdb.org/t/p/w500/{{ data.0.poster_path }}" alt="{{ data.0.name }} Poster">
+                <div class="movie-details" >
+                    <h2 class="movie-title">{{ data.0.name }}</h2>
+                    <p class="release-date">Release Date: {{ data.0.first_air_date }}</p>
+                </div>
+            </div>
+        </a>
+        {% endif %}
+    </div>
+{% endif %}
+</div>
+{% endblock %}
