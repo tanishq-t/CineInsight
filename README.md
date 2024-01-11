@@ -21,18 +21,23 @@
 <h2>Features: </h2>
 <ul>
   <li>
-    <p>1.Home Page:  Contains a responsive slider of upcoming or recently released movies and some more sliders of trending movies,tv shows etc.</p>
+    <p>1. Home Page:  Contains a responsive slider of upcoming or recently released movies and some more sliders of trending movies,tv shows etc.</p>
   </li>
   <li>
-    <p>2.Movie/Tv Shows Page:  Contains all the movies and Tv shows fetched from the Tmdb api through "Python", Django where you can search for any movie using the movie name and filter out movies based on the filter options given based on the "movie genre".</p>
+    <p>2. Movie/Tv Shows Page:  Contains all the movies and Tv shows fetched from the Tmdb api through "Python", Django where you can search for any movie using the movie name and filter out movies based on the filter options given based on the "movie genre".</p>
   </li>
   <li>
-    <p>Dashboard: The dashboard has a unique feature that only the person who had logged in or registered on the site can only view the dashboard.It contains some data about the user which only the user can see and his/her favorite movies and Tv shows.</p>
+    <p>3. Dashboard: The dashboard has a unique feature that only the person who had logged in or registered on the site can only view the dashboard.It contains some data about the user which only the user can see and his/her favorite movies and Tv shows.</p>
   </li>
   <li>
-    <p>2.Movie Details Page:  Contains all the basic info about the movie with the trailer running side by side.Scrolling down you can also see the reviews of other people as well and you have an add to favorite options as well which will only be wisible to the users who have logged into the site.".</p>
+    <p>4. Movie Details Page:  Contains all the basic info about the movie with the trailer running side by side.Scrolling down you can also see the reviews of other people as well and you have an add to favorite options as well which will only be wisible to the users who have logged into the site.".</p>
   </li>
 </ul>
-
+<h2>Some Points:</h2>
+<ul>
+  <li>While running the server on your computer or laptop please use the 8000 port only.</li>
+  <li>The Add to favorite option is visible only after login on the movie details page.</li>
+  <li>You can get the details of any movie by clicking on its poster.</li>
+</ul>
 <br>
 Author - Tanishq Tyagi
