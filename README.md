@@ -18,4 +18,21 @@
   The website's simplicity and functionality make it a go-to platform for movie lovers to discover, review, and keep track of their preferred films. CineInsight successfully blends a sleek design with powerful backend technology to offer a seamless and enjoyable movie exploration experience.
 </p>
 <br>
+<h2>Features: </h2>
+<ul>
+  <li>
+    <p>1.Home Page:  Contains a responsive slider of upcoming or recently released movies and some more sliders of trending movies,tv shows etc.</p>
+  </li>
+  <li>
+    <p>2.Movie/Tv Shows Page:  Contains all the movies and Tv shows fetched from the Tmdb api through "Python", Django where you can search for any movie using the movie name and filter out movies based on the filter options given based on the "movie genre".</p>
+  </li>
+  <li>
+    <p>Dashboard: The dashboard has a unique feature that only the person who had logged in or registered on the site can only view the dashboard.It contains some data about the user which only the user can see and his/her favorite movies and Tv shows.</p>
+  </li>
+  <li>
+    <p>2.Movie Details Page:  Contains all the basic info about the movie with the trailer running side by side.Scrolling down you can also see the reviews of other people as well and you have an add to favorite options as well which will only be wisible to the users who have logged into the site.".</p>
+  </li>
+</ul>
+
+<br>
 Author - Tanishq Tyagi
