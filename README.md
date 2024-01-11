@@ -1,5 +1,5 @@
-# CineInsight
-<h1>Tech Stack</h1>
+<h1> CineInsight </h1>
+<h2>Tech Stack</h2>
 <ul>
   <li>Front End: HTML, CSS, Java Script</li>
   <li>Backend: Python</li>
