@@ -11,12 +11,11 @@
 <p>
   CineInsight is an engaging movie review website designed for movie enthusiasts. Users can explore a vast collection of movies, including detailed information,     trailers, and reviews. The website features a user-friendly interface with HTML, CSS, and JavaScript, ensuring an immersive and interactive experience.
 </p>
-<br>
 <p>
   To enhance user interaction, CineInsight incorporates a robust login system powered by Python Django in the backend. This enables users to register, creating personalized accounts. Once logged in, users gain access to a dashboard section where they can conveniently manage and view their favorite movies.
 </p>
-<br>
 <p>
   The website's simplicity and functionality make it a go-to platform for movie lovers to discover, review, and keep track of their preferred films. CineInsight successfully blends a sleek design with powerful backend technology to offer a seamless and enjoyable movie exploration experience.
 </p>
+<br>
 Author - Tanishq Tyagi
