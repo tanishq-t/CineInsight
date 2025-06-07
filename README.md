@@ -1,3 +1,8 @@
+<!-- Screenshot at the very top -->
+<div style="text-align:center; margin-bottom: 20px;">
+  <img src="images/screenshot.png" alt="CineInsight Screenshot" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+</div>
+
 <h1> CineInsight:  Explore, Review, and Connect with Movies </h1>
 <h2>Tech Stack</h2>
 <ul>
